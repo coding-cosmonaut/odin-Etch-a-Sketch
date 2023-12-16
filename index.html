@@ -19,7 +19,18 @@
           <h1>Etch A Sketch</h1>
         </header>
         <div class="canvas"></div>
-        <div class="options"></div>
+        <div class="options">
+          <label for="gridSize">
+            Grid Size:
+            <input
+              name="gridSize"
+              value="16"
+              type="number"
+              min="16"
+              max="100"
+            />
+          </label>
+        </div>
       </div>
     </main>
     <script src="index.js"></script>

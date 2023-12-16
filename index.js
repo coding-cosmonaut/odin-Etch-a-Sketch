@@ -1,11 +1,14 @@
 const canvasContainer = document.querySelector(".canvas");
+const gridSizeInput = document.querySelector('input[name=gridSize]');
 
-//global variables
-let rows = 16;
-let columns = 16;
-
-function createGrid(row, column) {
+function createGrid(row = gridSizeInput.value, column = gridSizeInput.value) {
+  if (canvasContainer.hasChildNodes()) {
+    while(canvasContainer.firstChild) {
+      canvasContainer.removeChild(canvasContainer.firstChild)
+    }
+  }
   for (let i = 0; i < row; i++) {
+    console.log('hellop')
     const newDiv = document.createElement("div");
     newDiv.classList.add("gridDivs");
 
@@ -15,12 +18,18 @@ function createGrid(row, column) {
       const columnDiv = document.createElement("div");
       columnDiv.classList.add("gridDivs");
       columnDiv.addEventListener("mouseover", () => {
-        columnDiv.style["backgroundColor"] = "white";
-        columnDiv.style["border"] = "0.5px solid black";
+        columnDiv.style["backgroundColor"] = "black";
+        //columnDiv.style["border"] = "0.5px solid black";
       });
       newDiv.append(columnDiv);
     }
   }
 }
 
-createGrid(rows, columns);
+createGrid();
+
+
+gridSizeInput.addEventListener('input', (() => {
+  createGrid()
+}))
+
