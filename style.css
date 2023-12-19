@@ -109,3 +109,14 @@ button:hover {
   background-color: #e6ac00;
   color: white;
 }
+
+footer {
+  font-size: 50px;
+  text-align: center;
+}
+#github {
+  transition: all 0.4s ease-in-out;
+}
+#github:hover {
+  transform: rotate(360deg);
+}
