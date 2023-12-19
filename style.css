@@ -26,6 +26,7 @@ main {
 .container {
   width: 60%;
   height: 70%;
+  min-width: 960px;
   background-color: #ff4d4d;
   display: flex;
   flex-direction: column;
@@ -52,6 +53,7 @@ main {
 
 .canvas {
   width: 70%;
+  background-color: lightgray;
   height: 70%;
   display: flex;
   flex-wrap: wrap;
@@ -64,14 +66,16 @@ main {
 }
 
 .gridDivs {
-  background-color: lightgray;
   margin: 0;
   padding: 0;
-  /* border: 0.5px solid white; */
   display: flex;
   flex-grow: 1;
 }
 
-.border-radius {
-    border-radius: 12px;
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 150px;
+    width: 60%;
 }
